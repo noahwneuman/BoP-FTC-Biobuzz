@@ -19,9 +19,9 @@
  *   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *   SOFTWARE.
  */
-package org.firstinspires.ftc.teamcode.tests;
+// package org.firstinspires.ftc.teamcode.tests;
 
-import com.qualcomm.hardware.gobilda.GoBildaPinpointDriver;
+/* import com.qualcomm.hardware.gobilda.GoBildaPinpointDriver;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
@@ -39,7 +39,8 @@ import org.firstinspires.ftc.robotcore.external.navigation.Pose2D;
  *
  * See the sensor's product page: https://www.gobilda.com/pinpoint-odometry-computer-imu-sensor-fusion-for-2-wheel-odometry/
  */
-@TeleOp(name = "Sensor: GoBilda Pinpoint", group = "Sensor")
+
+/* @TeleOp(name = "Sensor: GoBilda Pinpoint", group = "Sensor")
 public class SensorGoBildaPinpoint extends OpMode {
     // Create an instance of the sensor
     GoBildaPinpointDriver pinpoint;
@@ -47,7 +48,7 @@ public class SensorGoBildaPinpoint extends OpMode {
     @Override
     public void init() {
         // Get a reference to the sensor
-        pinpoint = hardwareMap.get(GoBildaPinpointDriver.class, "odo");
+        pinpoint = hardwareMap.get(GoBildaPinpointDriver.class, "odmGear");
 
         // Configure the sensor
         configurePinpoint();
@@ -82,7 +83,7 @@ public class SensorGoBildaPinpoint extends OpMode {
          *  The Y pod offset refers to how far forwards from the tracking point the Y (strafe) odometry pod is.
          *  Forward of center is a positive number, backwards is a negative number.
          */
-        pinpoint.setOffsets(4, -0, DistanceUnit.MM); //these are tuned for 3110-0002-0001 Product Insight #1
+        // pinpoint.setOffsets(4, -0, DistanceUnit.MM); //these are tuned for 3110-0002-0001 Product Insight #1
 
         /*
          * Set the kind of pods used by your robot. If you're using goBILDA odometry pods, select either
@@ -91,14 +92,14 @@ public class SensorGoBildaPinpoint extends OpMode {
          * number of ticks per unit of your odometry pod.  For example:
          *     pinpoint.setEncoderResolution(13.26291192, DistanceUnit.MM);
          */
-        pinpoint.setEncoderResolution(GoBildaPinpointDriver.GoBildaOdometryPods.goBILDA_4_BAR_POD);
+        // pinpoint.setEncoderResolution(GoBildaPinpointDriver.GoBildaOdometryPods.goBILDA_4_BAR_POD);
 
         /*
          * Set the direction that each of the two odometry pods count. The X (forward) pod should
          * increase when you move the robot forward. And the Y (strafe) pod should increase when
          * you move the robot to the left.
          */
-        pinpoint.setEncoderDirections(GoBildaPinpointDriver.EncoderDirection.REVERSED,
+        /* pinpoint.setEncoderDirections(GoBildaPinpointDriver.EncoderDirection.REVERSED,
                 GoBildaPinpointDriver.EncoderDirection.REVERSED);
 
         /*
@@ -109,6 +110,7 @@ public class SensorGoBildaPinpoint extends OpMode {
          * This is recommended before you run your autonomous, as a bad initial calibration can cause
          * an incorrect starting value for x, y, and heading.
          */
-        pinpoint.resetPosAndIMU();
+        /* pinpoint.resetPosAndIMU();
     }
 }
+*/
