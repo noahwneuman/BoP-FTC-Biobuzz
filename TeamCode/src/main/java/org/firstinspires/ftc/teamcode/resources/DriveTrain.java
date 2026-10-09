@@ -12,9 +12,9 @@ public class DriveTrain {
     public DriveTrain(HardwareMap hardwareMap){
         fLeft = hardwareMap.get(DcMotor.class, "fLeft");
         fLeft.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        bLeft = hardwareMap.get(DcMotor.class, "fLeft");
+        bLeft = hardwareMap.get(DcMotor.class, "bLeft");
         bLeft.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        bRight = hardwareMap.get(DcMotor.class, "fLeft" );
+        bRight = hardwareMap.get(DcMotor.class, "bRight" );
         bRight.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         fRight = hardwareMap.get(DcMotor.class, "fRight");
         fRight.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);

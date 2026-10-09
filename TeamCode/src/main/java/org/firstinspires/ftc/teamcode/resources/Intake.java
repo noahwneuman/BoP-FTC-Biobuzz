@@ -5,14 +5,12 @@ import com.qualcomm.robotcore.hardware.DigitalChannel;
 import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
-public class SwyftWheels {
+public class Intake {
     private final DcMotor sWheel;
-    private final DigitalChannel beamBreak;
 
-    public SwyftWheels(HardwareMap hardwareMap) {
-        sWheel = hardwareMap.get(DcMotor.class, "swyftWheels");
+    public Intake(HardwareMap hardwareMap) {
+        sWheel = hardwareMap.get(DcMotor.class, "intake");
         sWheel.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        beamBreak = hardwareMap.get(DigitalChannel.class, "beamBreak");
     }
 
     public void update (Gamepad gamepad2) {
@@ -20,9 +18,5 @@ public class SwyftWheels {
     }
     public void spin(double power){
         sWheel.setPower(power);
-    }
-
-    public boolean ballSense (){
-        return !beamBreak.getState() && sWheel.getPower() < 0;
     }
 }
