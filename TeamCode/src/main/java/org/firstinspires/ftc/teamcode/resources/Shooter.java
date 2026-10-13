@@ -7,16 +7,12 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 
 public class Shooter {
     private final DcMotorEx wheels;
-
+    double MAX_RPM = 6000;
     public Shooter(HardwareMap hardwareMap){
         wheels = hardwareMap.get(DcMotorEx.class, "fWheels");
         wheels.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
     }
-    public void activate(double power){
-        double MAX_RPM = 6000;
-        wheels.setVelocity(power * MAX_RPM);
-    }
-    public void powerUp(Gamepad gamepad1){
-        activate((gamepad1.x) ? 1 : 0);
+    public void powerUp(Gamepad gamepad2){
+        wheels.setVelocity(gamepad2.right_trigger * MAX_RPM);
     }
 }
