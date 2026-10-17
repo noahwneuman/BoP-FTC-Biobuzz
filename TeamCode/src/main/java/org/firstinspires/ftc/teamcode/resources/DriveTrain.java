@@ -20,12 +20,12 @@ public class DriveTrain {
         fRight.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
     }
     public void mecanum(Gamepad gamepad1){
-        double y = -gamepad1.left_stick_y;
+        double y = gamepad1.left_stick_y;
         double x = gamepad1.left_stick_x;
         double r = gamepad1.right_stick_x;
-        fRight.setPower(y-x-r);
-        fLeft.setPower(y+x-r);
-        bLeft.setPower(y-x+r);
-        bRight.setPower(y+x+r);
+        fRight.setPower(y+x+r);
+        fLeft.setPower(y-x-r);
+        bLeft.setPower(y+x-r);
+        bRight.setPower(y-x+r);
     }
 }

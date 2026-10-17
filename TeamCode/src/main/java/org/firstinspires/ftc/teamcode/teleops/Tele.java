@@ -13,21 +13,21 @@ public class Tele extends OpMode {
 
     Intake s;
     DriveTrain d;
-    Shooter c;
-    Loaders l;
+    //Shooter c;
+    //Loaders l;
     @Override
     public void init() {
         s = new Intake(hardwareMap);
         d = new DriveTrain(hardwareMap);
-        c = new Shooter(hardwareMap);
-        l = new Loaders(hardwareMap);
+        //c = new Shooter(hardwareMap);
+        //l = new Loaders(hardwareMap);
     }
 
     @Override
     public void loop() {
-        s.update(gamepad2);
+        s.update(gamepad1);
         d.mecanum(gamepad1);
-        c.powerUp(gamepad1);
-        l.loadUp(gamepad1);
+        //c.powerUp(gamepad1);
+        //l.loadUp(gamepad1);
     }
 }
