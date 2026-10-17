@@ -23,19 +23,19 @@ public class FWAuto extends LinearOpMode {
                 d.bLeft.setPower(1);
                 d.bRight.setPower(1);
             }
-//        else if(e.seconds() == 4.71){
-//            d.fLeft.setPower(0);
-//            d.fRight.setPower(0);
-//            d.bLeft.setPower(0);
-//            d.bRight.setPower(0);
-//            }
-
+            else if(e.seconds() == 4.71){
+                d.fLeft.setPower(0);
+                d.fRight.setPower(0);
+                d.bLeft.setPower(0);
+                d.bRight.setPower(0);
+            }
             else if (e.seconds() <= 5.1) {
                 d.fLeft.setPower(1);
                 d.fRight.setPower(-1);
                 d.bLeft.setPower(1);
                 d.bRight.setPower(-1);
-            } else if (e.seconds() >= 5.11) {
+            }
+            else if (e.seconds() >= 5.11) {
                 d.fLeft.setPower(0);
                 d.fRight.setPower(0);
                 d.bLeft.setPower(0);
