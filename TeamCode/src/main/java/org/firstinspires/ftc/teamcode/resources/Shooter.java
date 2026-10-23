@@ -15,4 +15,8 @@ public class Shooter {
     public void powerUp(Gamepad gamepad2){
         wheels.setVelocity(gamepad2.right_trigger * MAX_RPM);
     }
+    public void activate(double power){
+        wheels.setVelocity(power * MAX_RPM);
+        //USE FOR AUTONOMOUS ONLY
+    }
 }

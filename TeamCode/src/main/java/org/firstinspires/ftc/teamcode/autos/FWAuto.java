@@ -17,25 +17,25 @@ public class FWAuto extends LinearOpMode {
         e = new ElapsedTime();
         e.reset();
         while (true) {
-            if (e.seconds() <= 4.7) {
-                d.fLeft.setPower(1);
-                d.fRight.setPower(1);
-                d.bLeft.setPower(1);
-                d.bRight.setPower(1);
+            if (e.seconds() <= 0.15) {
+                d.fLeft.setPower(-0.5);
+                d.fRight.setPower(-0.5);
+                d.bLeft.setPower(-0.5);
+                d.bRight.setPower(-0.5);
             }
-            else if(e.seconds() == 4.71){
+            else if(e.seconds() == 0.16){
                 d.fLeft.setPower(0);
                 d.fRight.setPower(0);
                 d.bLeft.setPower(0);
                 d.bRight.setPower(0);
             }
-            else if (e.seconds() <= 5.1) {
-                d.fLeft.setPower(1);
-                d.fRight.setPower(-1);
-                d.bLeft.setPower(1);
-                d.bRight.setPower(-1);
+            else if (e.seconds() <= 0.55) {
+                d.fLeft.setPower(0.5);
+                d.fRight.setPower(-0.5);
+                d.bLeft.setPower(-0.5);
+                d.bRight.setPower(0.5);
             }
-            else if (e.seconds() >= 5.11) {
+            else if (e.seconds() >= 0.56) {
                 d.fLeft.setPower(0);
                 d.fRight.setPower(0);
                 d.bLeft.setPower(0);
