@@ -19,9 +19,14 @@ public class PracticeAuto extends OpMode {
     // poses go here
     // p.of(x, y, heading);
     private final Pose startPose = p.of(0,0,0);
-    private final Pose endPose = p.of(24,0,0);
-    private Path move() {
-        return line(startPose, endPose).linear(startPose, endPose);
+    private final Pose midPose = p.of(24,0,0);
+    private final Pose endPose = p.of(24,36,0);
+
+    private Path move1() {
+        return line(startPose, midPose).linear(startPose, midPose);
+
+    }private Path move2() {
+        return line(midPose, endPose).linear(midPose, endPose);
     }
 
     @Override
@@ -34,7 +39,8 @@ public class PracticeAuto extends OpMode {
 
     @Override
     public void start() {
-        schedule(follow(follower, move()));
+        schedule(follow(follower, move1()));
+        schedule(follow(follower, move2()));
     }
 
     @Override
