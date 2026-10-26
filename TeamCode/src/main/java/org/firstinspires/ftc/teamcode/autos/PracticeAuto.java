@@ -19,14 +19,14 @@ public class PracticeAuto extends OpMode {
     // poses go here
     // p.of(x, y, heading);
     private final Pose startPose = p.of(0,0,0);
-    private final Pose midPose = p.of(24,0,0);
-    private final Pose endPose = p.of(24,36,0);
+    private final Pose shootPose = p.of(24,36,0);
+    private final Pose parkPose = p.of(0,12,0);
 
     private Path move1() {
-        return line(startPose, midPose).linear(startPose, midPose);
-
-    }private Path move2() {
-        return line(midPose, endPose).linear(midPose, endPose);
+        return line(startPose, shootPose).linear(startPose, shootPose);
+    }
+    private Path move2() {
+        return line(shootPose, parkPose).linear(shootPose, parkPose);
     }
 
     @Override
