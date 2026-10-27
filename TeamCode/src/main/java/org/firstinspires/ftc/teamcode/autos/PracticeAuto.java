@@ -10,6 +10,9 @@ import com.pedropathing.paths.Path;
 import com.pedropathing.ivy.Scheduler;
 import static com.pedropathing.ivy.Scheduler.schedule;
 import static com.pedropathing.ivy.pedro.PedroCommands.follow;
+import com.pedropathing.ivy.Command;
+import static com.pedropathing.ivy.groups.Groups.sequential;
+import static com.pedropathing.ivy.commands.Commands.waitMs;
 
 @Autonomous
 public class PracticeAuto extends OpMode {
@@ -19,8 +22,8 @@ public class PracticeAuto extends OpMode {
     // poses go here
     // p.of(x, y, heading);
     private final Pose startPose = p.of(0,0,0);
-    private final Pose shootPose = p.of(24,36,0);
-    private final Pose parkPose = p.of(0,12,0);
+    private final Pose shootPose = p.of(48,36,90);
+    private final Pose parkPose = p.of(0,12,270);
 
     private Path move1() {
         return line(startPose, shootPose).linear(startPose, shootPose);
@@ -37,10 +40,17 @@ public class PracticeAuto extends OpMode {
         follower.setPose(startPose);
     }
 
+    private Command autoRoutine() {
+        return sequential(
+                follow(follower, move1()),
+                waitMs(3000),
+                follow(follower, move2())
+        );
+    }
+
     @Override
     public void start() {
-        schedule(follow(follower, move1()));
-        schedule(follow(follower, move2()));
+        schedule(autoRoutine());
     }
 
     @Override
