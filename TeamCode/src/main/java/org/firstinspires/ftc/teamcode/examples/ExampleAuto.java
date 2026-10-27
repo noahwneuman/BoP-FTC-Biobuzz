@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.autos;
+package org.firstinspires.ftc.teamcode.examples;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.pedropathing.follower.Follower;
@@ -15,7 +15,7 @@ import static com.pedropathing.ivy.groups.Groups.sequential;
 import static com.pedropathing.ivy.commands.Commands.waitMs;
 
 @Autonomous
-public class PracticeAuto extends OpMode {
+public class ExampleAuto extends OpMode {
     private Follower follower;
     private final PoseFactory p = PoseFactory.degrees();
 
@@ -40,17 +40,17 @@ public class PracticeAuto extends OpMode {
         follower.setPose(startPose);
     }
 
+    @Override
+    public void start() {
+        schedule(autoRoutine());
+    }
+
     private Command autoRoutine() {
         return sequential(
                 follow(follower, move1()),
                 waitMs(3000),
                 follow(follower, move2())
         );
-    }
-
-    @Override
-    public void start() {
-        schedule(autoRoutine());
     }
 
     @Override
