@@ -31,37 +31,35 @@ public class ScrimmageAuto extends OpMode {
 
     private final Pose startPose = poseFactory.of(0, 80, 0);
     private final Pose path1 = poseFactory.of(30, 80, 0);
-    private final Pose path2 = poseFactory.of(58, 20, 0);
+    private final Pose path2Start = poseFactory.of(30, 80, 0);
+    private final Pose path2 = poseFactory.of(58, 20, 90);
     private final Pose path2Control1 = poseFactory.of(30, 20, 0);
-    private final Pose shootNowStart = poseFactory.of(58, 20, 90);
-    private final Pose shootNow = poseFactory.of(58, 20, 90);
-    private final Pose intakeParallelStart = poseFactory.of(58, 20, 90);
-    private final Pose intakeParallel = poseFactory.of(58, 45, 90);
-    private final Pose path5Start = poseFactory.of(58, 45, 180);
-    private final Pose path5 = poseFactory.of(38, 45, 180);
-    private final Pose path6Start = poseFactory.of(38, 45, 90);
-    private final Pose path6 = poseFactory.of(38, 120, 90);
-    private final Pose path7Start = poseFactory.of(38, 120, 0);
-    private final Pose path7 = poseFactory.of(58, 120, 0);
-    private final Pose point8Start = poseFactory.of(58, 120, 270);
-    private final Pose point8 = poseFactory.of(58, 120, 270);
-    private final Pose point9 = poseFactory.of(0, 100, 180);
-    private final Pose point9Control1 = poseFactory.of(58, 100, 0);
+    private final Pose path3Start = poseFactory.of(58, 20, 90);
+    private final Pose path3 = poseFactory.of(58, 45, 90);
+    private final Pose path4Start = poseFactory.of(58, 45, 180);
+    private final Pose path4 = poseFactory.of(38, 45, 180);
+    private final Pose path5Start = poseFactory.of(38, 45, 90);
+    private final Pose path5 = poseFactory.of(38, 120, 0);
+    private final Pose path6Start = poseFactory.of(38, 120, 0);
+    private final Pose path6 = poseFactory.of(58, 120, 270);
+    private final Pose path7Start = poseFactory.of(58, 120, 270);
+    private final Pose path7 = poseFactory.of(0, 100, 0);
+    private final Pose path7Control1 = poseFactory.of(58, 100, 0);
 
-        public Path path1() {
+    public Path path1() {
         return Paths.line(startPose, path1).linear(startPose, path1);
     }
 
     public Path path2() {
-        return Paths.curve(path1, path2Control1, path2).tangent();
+        return Paths.curve(path2Start, path2Control1, path2).linear(path2Start, path2);
     }
 
-    public Path shootNow() {
-        return Paths.line(shootNowStart, shootNow).linear(shootNowStart, shootNow);
+    public Path path3() {
+        return Paths.line(path3Start, path3).linear(path3Start, path3);
     }
 
-    public Path intakeParallel() {
-        return Paths.line(intakeParallelStart, intakeParallel).linear(intakeParallelStart, intakeParallel);
+    public Path path4() {
+        return Paths.line(path4Start, path4).linear(path4Start, path4);
     }
 
     public Path path5() {
@@ -73,15 +71,7 @@ public class ScrimmageAuto extends OpMode {
     }
 
     public Path path7() {
-        return Paths.line(path7Start, path7).linear(path7Start, path7);
-    }
-
-    public Path path8() {
-        return Paths.line(point8Start, point8).linear(point8Start, point8);
-    }
-
-    public Path path9() {
-        return Paths.curve(point8, point9Control1, point9).tangent();
+        return Paths.curve(path7Start, path7Control1, path7).linear(path7Start, path7);
     }
 
     @Override
@@ -117,16 +107,14 @@ public class ScrimmageAuto extends OpMode {
         return sequential(
 
                 follow(follower, path1()),
-                follow(follower, path2()),
-                follow(follower, shootNow()),
-                parallel(startShoot(), waitMs(3000)),
-                endShoot(),
-                follow(follower, intakeParallel()),
+                parallel(follow(follower, path2()), (startShoot())),
+                waitMs(3000),
+                parallel(follow(follower, path3()), (endShoot())),
+                follow(follower, path4()),
                 follow(follower, path5()),
-                follow(follower, path6()),
-                follow(follower, path7()),
-                follow(follower, path8()),
-                follow(follower, path9())
+                parallel(follow(follower, path6()), (startShoot())),
+                waitMs(3000),
+                parallel (follow(follower, path7()), (endShoot()))
         );
     }
 

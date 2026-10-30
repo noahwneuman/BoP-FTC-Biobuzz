@@ -16,10 +16,9 @@ import static com.pedropathing.ivy.pedro.PedroCommands.follow;
 import com.pedropathing.ivy.Command;
 import static com.pedropathing.ivy.groups.Groups.sequential;
 import static com.pedropathing.ivy.commands.Commands.waitMs;
-import com.pedropathing.api.Paths;
 
 @Autonomous
-public class ExampleAuto extends OpMode {
+public class ExamplePedro extends OpMode {
     private Follower follower;
     private Shooter shooter;
     private final PoseFactory poseFactory = PoseFactory.degrees();
