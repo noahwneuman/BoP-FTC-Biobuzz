@@ -5,6 +5,8 @@ repositories {
 }
 
 dependencies {
+    // Do not change any of these despite the warnings. The robot currently functions off these versions
+    implementation 'com.pedropathing.ivy:pedro:1.1.1'
     implementation 'com.pedropathing:revhub:3.0.1'
     implementation 'com.pedropathing:tuning:1.0.0'
     implementation 'org.firstinspires.ftc:Inspection:12.0.0'
