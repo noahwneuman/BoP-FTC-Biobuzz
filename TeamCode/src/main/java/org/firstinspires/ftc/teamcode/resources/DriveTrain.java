@@ -28,4 +28,10 @@ public class DriveTrain {
         bLeft.setPower(y+x-r);
         bRight.setPower(y-x+r);
     }
+    public void autoPowers(double fL, double bL, double fR, double bR){
+        fRight.setPower(fR);
+        fLeft.setPower(fL);
+        bLeft.setPower(bL);
+        bRight.setPower(bR);
+    }
 }
