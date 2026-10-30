@@ -22,13 +22,13 @@ import com.pedropathing.api.Paths;
 public class ExampleAuto extends OpMode {
     private Follower follower;
     private Shooter shooter;
-    private final PoseFactory p = PoseFactory.degrees();
+    private final PoseFactory poseFactory = PoseFactory.degrees();
 
     // poses go here
     // p.of(x, y, heading);
-    private final Pose startPose = p.of(0,0,0);
-    private final Pose shootPose = p.of(48,36,90);
-    private final Pose parkPose = p.of(0,12,270);
+    private final Pose startPose = poseFactory.of(0,0,0);
+    private final Pose shootPose = poseFactory.of(48,36,90);
+    private final Pose parkPose = poseFactory.of(0,12,270);
 
     private Path move1() {
         return line(startPose, shootPose).linear(startPose, shootPose);

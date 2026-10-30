@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 
 
 @TeleOp(name = "Training Time take 2")
-public class exampleMotor extends OpMode {
+public class ExampleMotor extends OpMode {
     DcMotor fLeft;
     DcMotor fRight;
     DcMotor bLeft;
