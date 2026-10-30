@@ -5,8 +5,8 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 import org.firstinspires.ftc.teamcode.resources.DriveTrain;
 import org.firstinspires.ftc.teamcode.resources.Intake;
-import org.firstinspires.ftc.teamcode.resources.Loaders;
-import org.firstinspires.ftc.teamcode.resources.Shooter;
+//import org.firstinspires.ftc.teamcode.resources.Loaders;
+//import org.firstinspires.ftc.teamcode.resources.Shooter;
 
 @TeleOp(name = "DRIVE TEAM, CHOOSE THIS ONE")
 public class Tele extends OpMode {

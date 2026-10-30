@@ -1,7 +1,6 @@
 package org.firstinspires.ftc.teamcode.resources;
 
 import com.qualcomm.robotcore.hardware.CRServo;
-import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
@@ -16,5 +15,8 @@ public class Loaders {
     public void loadUp(Gamepad gamepad1){
         pLoader.setPower(gamepad1.left_trigger);
         nLoader.setPower(gamepad1.right_trigger);
+    }
+    public void autoLoad(double power){
+        pLoader.setPower(power);
     }
 }
