@@ -1,22 +1,20 @@
 package org.firstinspires.ftc.teamcode.resources;
 
 import com.qualcomm.robotcore.hardware.CRServo;
+import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 public class Loaders {
-    CRServo pLoader;
-    CRServo nLoader;
-
+    DcMotor loader;
     public Loaders(HardwareMap hardwareMap){
-        pLoader = hardwareMap.get(CRServo.class, "pLoader");
-        nLoader = hardwareMap.get(CRServo.class, "nLoader");
+        loader = hardwareMap.get(DcMotor.class,"loader");
+        loader.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
     }
     public void loadUp(Gamepad gamepad1){
-        pLoader.setPower(gamepad1.left_trigger);
-        nLoader.setPower(gamepad1.right_trigger);
+        loader.setPower(gamepad1.left_trigger);
     }
     public void autoLoad(double power){
-        pLoader.setPower(power);
+        loader.setPower(power);
     }
 }
