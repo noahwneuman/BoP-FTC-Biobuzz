@@ -19,7 +19,6 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 
 import org.firstinspires.ftc.teamcode.pedro.Constants;
-import org.firstinspires.ftc.teamcode.resources.Intake;
 import org.firstinspires.ftc.teamcode.resources.Shooter;
 
 @Autonomous
