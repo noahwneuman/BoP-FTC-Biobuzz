@@ -16,6 +16,10 @@ public class LimeLightAT {
         light.pipelineSwitch(0);
     }
     public boolean seeTagsRedAud(){
+        result = light.getLatestResult();
+        if (result == null) {
+            return false;
+        }
         List<LLResultTypes.FiducialResult> fiducials = result.getFiducialResults();
         for (LLResultTypes.FiducialResult fiducial : fiducials) {
             int id = fiducial.getFiducialId(); // The ID number of the fiducial
@@ -26,6 +30,10 @@ public class LimeLightAT {
         return false;
     }
     public boolean seeTagsRedScore(){
+        result = light.getLatestResult();
+        if (result == null) {
+            return false;
+        }
         List<LLResultTypes.FiducialResult> fiducials = result.getFiducialResults();
         for (LLResultTypes.FiducialResult fiducial : fiducials) {
             int id = fiducial.getFiducialId(); // The ID number of the fiducial
@@ -36,6 +44,10 @@ public class LimeLightAT {
         return false;
     }
     public boolean seeTagsBlueAud(){
+        result = light.getLatestResult();
+        if (result == null) {
+            return false;
+        }
         List<LLResultTypes.FiducialResult> fiducials = result.getFiducialResults();
         for (LLResultTypes.FiducialResult fiducial : fiducials) {
             int id = fiducial.getFiducialId(); // The ID number of the fiducial
@@ -46,6 +58,10 @@ public class LimeLightAT {
         return false;
     }
     public boolean seeTagsBlueScore(){
+        result = light.getLatestResult();
+        if (result == null) {
+            return false;
+        }
         List<LLResultTypes.FiducialResult> fiducials = result.getFiducialResults();
         for (LLResultTypes.FiducialResult fiducial : fiducials) {
             int id = fiducial.getFiducialId(); // The ID number of the fiducial
