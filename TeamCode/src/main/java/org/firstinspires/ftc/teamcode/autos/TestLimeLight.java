@@ -35,14 +35,14 @@ public class TestLimeLight extends LinearOpMode {
             telemetry.addData("Decision (tagRedAud)", tagRedAud);
             telemetry.update();
 
-            if(e.seconds() <= 0) {
+            if(e.seconds() <= 1.2) {
                 d.autoPowers(-1,-1,-1,-1);
             }
-            else if(e.seconds() <= 25) {
+            else if(e.seconds() <= 1.4) {
                 d.autoPowers(0,0,0,0);
                 tagRedAud = l.seeTagsRedAud();
             }
-            else if(e.seconds() <= 25.5) {
+            else if(e.seconds() <= 2) {
                 if(tagRedAud) {
                     d.autoPowers(1,-1,-1,1);
                 }
